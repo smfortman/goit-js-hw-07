@@ -27,5 +27,8 @@ galleryContainer.addEventListener('click', event => {
 });
 
 document.querySelector('.gallery').onclick = event => {
+  if (event.target.nodeName !== 'IMG') {
+    return;
+  }
   basicLightbox.create(`<img src="${event.target.dataset.source}">`).show();
 };
