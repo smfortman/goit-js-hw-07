@@ -13,7 +13,7 @@ function createImgGallaryMarkup(galleryItems) {
             <img
             class="gallery__image"
             src="${preview}"
-            data-source="large-image.jpg"
+            data-source="${original}"
             alt="${description}"
             />
         </a>
@@ -22,4 +22,10 @@ function createImgGallaryMarkup(galleryItems) {
     .join('');
 }
 
-console.log(galleryItems);
+galleryContainer.addEventListener('click', event => {
+  event.preventDefault();
+});
+
+document.querySelector('.gallery').onclick = event => {
+  basicLightbox.create(`<img src="${event.target.dataset.source}">`).show();
+};
