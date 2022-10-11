@@ -24,11 +24,11 @@ function createImgGallaryMarkup(galleryItems) {
 
 galleryContainer.addEventListener('click', event => {
   event.preventDefault();
-});
 
-document.querySelector('.gallery').onclick = event => {
-  if (event.target.nodeName !== 'IMG') {
-    return;
-  }
-  basicLightbox.create(`<img src="${event.target.dataset.source}">`).show();
-};
+  document.querySelector('.gallery').onclick = event => {
+    if (event.target.nodeName !== 'IMG') {
+      return;
+    }
+    basicLightbox.create(`<img src="${event.target.dataset.source}">`).show();
+  };
+});
